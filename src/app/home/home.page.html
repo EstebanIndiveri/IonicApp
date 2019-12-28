@@ -1,5 +1,8 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/places"></ion-back-button>
+    </ion-buttons>
     <ion-title>
       Ionic Blank
     </ion-title>
@@ -7,8 +10,13 @@
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-list>
+  <ion-card *ngFor="let photo of photos">
+    <img [src]="photo.thumbnailUrl" alt="imagen subida">
+    <ion-card-content>
+    <p>{{photo.title}}</p>
+    <p>{{photo.albumId}}</p>: <a [href]="photo.url" target="_blank">{{photo.url}}</a>
+    </ion-card-content>
+  </ion-card>
+</ion-list>
 </ion-content>

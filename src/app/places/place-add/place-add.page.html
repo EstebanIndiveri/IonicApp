@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary"> <!-- color de boostap cambiar?? #W?-->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/places"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar articulo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-row>
+  <ion-col>
+    <ion-card>
+      <ion-card-content>
+        <ion-input tpye="text" placeholder="Escribe el titulo" #title></ion-input>
+        <ion-input tpye="text" placeholder="http://tuimage.com" #imageUrl></ion-input>
+        <ion-button color="primary" (click)="saveNewPlace(title,imageUrl)">
+          Guardar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+</ion-content>
